@@ -1,0 +1,40 @@
+{
+  "name" : "bhagyesh-job1",
+  "jobMode" : "VISUAL",
+  "description" : "",
+  "role" : "arn:aws:iam::104954564318:role/bhagyesh-role",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 1
+  },
+  "command" : {
+    "name" : "glueetl",
+    "scriptLocation" : "s3://bhagyesh-s3/script/bhagyesh-job1.py",
+    "pythonVersion" : "3"
+  },
+  "defaultArguments" : {
+    "--enable-metrics" : "true",
+    "--enable-spark-ui" : "true",
+    "--spark-event-logs-path" : "s3://aws-glue-assets-104954564318-ap-south-1/sparkHistoryLogs/",
+    "--enable-job-insights" : "true",
+    "--enable-observability-metrics" : "true",
+    "--enable-glue-datacatalog" : "true",
+    "--job-bookmark-option" : "job-bookmark-disable",
+    "--job-language" : "python",
+    "--TempDir" : "s3://bhagyesh-s3/temp/"
+  },
+  "maxRetries" : 0,
+  "allocatedCapacity" : 10,
+  "timeout" : 10,
+  "maxCapacity" : 10.0,
+  "glueVersion" : "5.0",
+  "numberOfWorkers" : 10,
+  "workerType" : "G.1X",
+  "executionClass" : "STANDARD",
+  "codeGenConfigurationNodes" : "{\"node-1747637455458\":{\"S3GlueParquetTarget\":{\"AutoDataQuality\":{\"EvaluationContext\":\"EvaluateDataQuality_node1747637441924\",\"IsEnabled\":true},\"Compression\":\"snappy\",\"Inputs\":[\"node-1747637452310\"],\"Name\":\"Amazon S3\",\"NumberTargetPartitions\":\"0\",\"PartitionKeys\":[],\"Path\":\"s3://bhagyesh-s3/output/\",\"SchemaChangePolicy\":{\"Database\":\"bhagyesh-database\",\"EnableUpdateCatalog\":true,\"Table\":\"target-product\",\"UpdateBehavior\":\"UPDATE_IN_DATABASE\"}}},\"node-1747637447678\":{\"S3CatalogSource\":{\"AdditionalOptions\":{},\"Database\":\"bhagyesh-database\",\"Name\":\"Amazon S3\",\"PartitionPredicate\":\"\",\"Table\":\"product\"}},\"node-1747637452310\":{\"ApplyMapping\":{\"Inputs\":[\"node-1747637447678\"],\"Mapping\":[{\"Dropped\":false,\"FromPath\":[\"marketplace\"],\"FromType\":\"string\",\"ToKey\":\"marketplace\",\"ToType\":\"string\"},{\"Dropped\":false,\"FromPath\":[\"customer_id\"],\"FromType\":\"long\",\"ToKey\":\"customer_id\",\"ToType\":\"long\"},{\"Dropped\":false,\"FromPath\":[\"product_id\"],\"FromType\":\"string\",\"ToKey\":\"product_id\",\"ToType\":\"string\"},{\"Dropped\":false,\"FromPath\":[\"seller_id\"],\"FromType\":\"string\",\"ToKey\":\"seller_id\",\"ToType\":\"string\"},{\"Dropped\":false,\"FromPath\":[\"sell_date\"],\"FromType\":\"string\",\"ToKey\":\"sell_date\",\"ToType\":\"string\"},{\"Dropped\":false,\"FromPath\":[\"quantity\"],\"FromType\":\"long\",\"ToKey\":\"quantity\",\"ToType\":\"long\"},{\"Dropped\":false,\"FromPath\":[\"year\"],\"FromType\":\"string\",\"ToKey\":\"year\",\"ToType\":\"string\"}],\"Name\":\"Change Schema\"}}}",
+  "sourceControlDetails" : {
+    "provider" : "GITHUB",
+    "repository" : "bhagyesh-aws",
+    "branch" : "main",
+    "folder" : "python_script"
+  }
+}
