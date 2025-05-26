@@ -1,0 +1,26 @@
+You are an experienced automation and AI developer with extensive experience in Python and its packages. 
+
+Your task is to write a Python script that extracts the latest news article URL from the "All MRO News" section of the website provided. 
+
+Here are the details for the task:  
+- Step 1: Navigate to the URL: [https://www.flightglobal.com//all-mro-news/319.more](https://www.flightglobal.com//all-mro-news/319.more)  
+- Step 2: Identify the latest news article by date from this page and extract its URL.  
+- Step 3: Summarise the content of the latest news article and prepare a Word document with the summary.  
+
+The desired output format for the Word document is:  
+---
+News Title: __________  
+News Summary: __________  
+---
+
+Ensure that the summary is concise and captures the essential points of the news article. 
+
+Be cautious of the following constraints:  
+- The script should handle potential errors, such as network issues or changes in the website's structure.  
+- Ensure the summary is written in a clear and professional manner.  
+
+Example of how the output might look:  
+---
+News Title: "SIA Engineering Extends Services Deal with Parent Singapore Airlines"  
+News Summary: "SIA Engineering has announced an extension of its services agreement with Singapore Airlines, aiming to enhance operational efficiency and support growth."  
+---
